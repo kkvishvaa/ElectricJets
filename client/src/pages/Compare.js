@@ -31,8 +31,8 @@ export default function Compare() {
     axios.get('/api/jets').then(res => setJets(res.data));
   }, []);
 
-  const selectedJetA = jets.find(j => j.id === jetA);
-  const selectedJetB = jets.find(j => j.id === jetB);
+  const selectedJetA = Array.isArray(jets) ? jets.find(j => j.id === jetA) : undefined;
+  const selectedJetB = Array.isArray(jets) ? jets.find(j => j.id === jetB) : undefined;
   const canCompare = selectedJetA && selectedJetB && jetA !== jetB;
 
   function compareFeature(valueA, valueB, type = 'number') {
