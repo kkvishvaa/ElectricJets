@@ -44,7 +44,7 @@ export default function Jets() {
     setFiltered(result);
   }, [search, jets, typeFilter]);
 
-  const jetTypes = ['All', ...new Set(jets.map(jet => jet.type))];
+  const jetTypes = Array.isArray(jets) ? ['All', ...new Set(jets.map(jet => jet.type))] : ['All'];
 
   return (
     <div className="jets-page">
@@ -90,7 +90,7 @@ export default function Jets() {
 
         {/* Jets Grid */}
         <div className="jets-grid">
-          {filtered.map(jet => (
+          {Array.isArray(filtered) && filtered.map(jet => (
             <div key={jet.id} className="jet-card">
               <div className="jet-image">
                 <img 
