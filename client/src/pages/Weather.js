@@ -49,7 +49,7 @@ const Weather = () => {
     setError(null);
     
     try {
-      const response = await axios.get(`http://localhost:5000/api/weather?airport=${airport}`);
+      const response = await axios.get(`https://electricjets.onrender.com/api/weather?airport=${airport}`);
       if (response.data.success) {
         setWeatherData(response.data);
       } else {

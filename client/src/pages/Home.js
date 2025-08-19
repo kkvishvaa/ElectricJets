@@ -86,7 +86,7 @@ export default function Home() {
             <h3 className="section-title">Featured Aircraft</h3>
           </div>
           <div className="jets-grid">
-            {featuredJets.map(jet => (
+            {Array.isArray(featuredJets) && featuredJets.map(jet => (
               <div key={jet.id} className="jet-card">
                 <div className="jet-image-home">
                   <img 

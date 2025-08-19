@@ -25,7 +25,7 @@ const FlightSearch = () => {
 
   const loadPopularDestinations = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/flights/destinations');
+      const response = await axios.get('https://electricjets.onrender.com/api/flights/destinations');
       if (response.data.success) {
         setPopularDestinations(response.data.destinations);
       }
@@ -36,7 +36,7 @@ const FlightSearch = () => {
 
   const loadEmptyLegs = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/flights/empty-legs');
+      const response = await axios.get('https://electricjets.onrender.com/api/flights/empty-legs');
       if (response.data.success) {
         setEmptyLegs(response.data.flights);
       }
@@ -50,7 +50,7 @@ const FlightSearch = () => {
     setLoading(true);
     
     try {
-      const response = await axios.get('http://localhost:5000/api/flights/search', {
+      const response = await axios.get('https://electricjets.onrender.com/api/flights/search', {
         params: searchParams
       });
       
