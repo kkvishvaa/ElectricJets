@@ -42,13 +42,15 @@ export default function Deals() {
   }, []);
 
   useEffect(() => {
-    let filtered = deals.filter(deal => {
-      return (
-        (!filters.from || deal.from.toLowerCase().includes(filters.from.toLowerCase())) &&
-        (!filters.to || deal.to.toLowerCase().includes(filters.to.toLowerCase())) &&
-        (!filters.maxPrice || deal.price <= parseInt(filters.maxPrice))
-      );
-    });
+    let filtered = Array.isArray(deals)
+      ? deals.filter(deal => {
+          return (
+            (!filters.from || deal.from.toLowerCase().includes(filters.from.toLowerCase())) &&
+            (!filters.to || deal.to.toLowerCase().includes(filters.to.toLowerCase())) &&
+            (!filters.maxPrice || deal.price <= parseInt(filters.maxPrice))
+          );
+        })
+      : [];
 
     // Sort deals
     if (filters.sortBy === 'price') {
