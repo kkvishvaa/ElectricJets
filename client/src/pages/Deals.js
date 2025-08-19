@@ -172,7 +172,7 @@ export default function Deals() {
 
         {/* Deals Grid */}
         <div className="deals-grid">
-          {filteredDeals.map(deal => {
+          {Array.isArray(filteredDeals) && filteredDeals.map(deal => {
             const originalPrice = deal.price * 1.5; // Simulate original price
             const discount = calculateDiscount(originalPrice, deal.price);
             const savings = originalPrice - deal.price;

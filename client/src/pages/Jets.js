@@ -36,11 +36,13 @@ export default function Jets() {
   }, []);
 
   useEffect(() => {
-    let result = jets.filter(jet =>
-      (jet.name.toLowerCase().includes(search.toLowerCase()) ||
-       jet.type.toLowerCase().includes(search.toLowerCase())) &&
-      (typeFilter === 'All' || jet.type === typeFilter)
-    );
+    let result = Array.isArray(jets)
+      ? jets.filter(jet =>
+          (jet.name.toLowerCase().includes(search.toLowerCase()) ||
+           jet.type.toLowerCase().includes(search.toLowerCase())) &&
+          (typeFilter === 'All' || jet.type === typeFilter)
+        )
+      : [];
     setFiltered(result);
   }, [search, jets, typeFilter]);
 
