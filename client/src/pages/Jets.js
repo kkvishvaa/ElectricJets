@@ -29,7 +29,7 @@ export default function Jets() {
   };
 
   useEffect(() => {
-    axios.get('/api/jets').then(res => {
+    axios.get('https://electricjets.onrender.com/api/jets').then(res => {
       setJets(res.data);
       setFiltered(res.data);
     });

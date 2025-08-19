@@ -33,7 +33,7 @@ export default function FlightTracker() {
 
   async function fetchFlights() {
     try {
-      const response = await axios.get('/api/track');
+      const response = await axios.get('https://electricjets.onrender.com/api/track');
       setFlights(response.data.flights || []);
       setLoading(false);
     } catch (error) {

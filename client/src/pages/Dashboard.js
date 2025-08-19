@@ -7,7 +7,7 @@ export default function Dashboard() {
   const [metrics, setMetrics] = useState(null);
 
   useEffect(() => {
-    axios.get('/api/dashboard').then(res => setMetrics(res.data.metrics));
+    axios.get('https://electricjets.onrender.com/api/dashboard').then(res => setMetrics(res.data.metrics));
   }, []);
 
   if (!metrics) return <div className="luxury-bg"><h2>Dashboard</h2><p>Loading...</p></div>;

@@ -21,7 +21,7 @@ export default function Booking() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    axios.get('/api/jets').then(res => setJets(res.data));
+    axios.get('https://electricjets.onrender.com/api/jets').then(res => setJets(res.data));
   }, []);
 
   function handleChange(e) {
