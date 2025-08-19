@@ -33,7 +33,7 @@ export default function Booking() {
     setLoading(true);
     setError('');
     try {
-      await axios.post('/api/bookings', form);
+      await axios.post('https://electricjets.onrender.com/api/bookings', form);
       setSubmitted(true);
     } catch (err) {
       setError('Booking failed. Please try again.');
