@@ -44,6 +44,14 @@ export default [
       avionics: "Garmin G3000",
       autopilot: "GFC 700",
       weatherRadar: "Multi-scan"
+    },
+    production: {
+      facility: "Wichita, Kansas",
+      firstFlight: "2014",
+      productionStart: "2015",
+      unitsProduced: "400+",
+      productionRate: "25/year",
+      status: "In Production"
     }
   },
   {
@@ -90,6 +98,14 @@ export default [
       avionics: "PlaneView II",
       autopilot: "Enhanced Flight Vision System",
       weatherRadar: "Multi-scan with turbulence detection"
+    },
+    production: {
+      facility: "Savannah, Georgia",
+      firstFlight: "2008",
+      productionStart: "2009",
+      unitsProduced: "750+",
+      productionRate: "40/year",
+      status: "In Production"
     }
   },
   {
@@ -136,6 +152,14 @@ export default [
       avionics: "Prodigy Touch",
       autopilot: "GFC 700",
       weatherRadar: "RDR-2000"
+    },
+    production: {
+      facility: "São José dos Campos, Brazil",
+      firstFlight: "2007",
+      productionStart: "2009",
+      unitsProduced: "600+",
+      productionRate: "30/year",
+      status: "In Production"
     }
   },
   {

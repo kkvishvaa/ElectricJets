@@ -28,7 +28,7 @@ export default function Jets() {
   };
 
   useEffect(() => {
-    axios.get('https://electricjets.onrender.com/api/jets').then(res => {
+    axios.get('http://localhost:5000/api/jets').then(res => {
       setJets(res.data);
       setFiltered(res.data);
     });

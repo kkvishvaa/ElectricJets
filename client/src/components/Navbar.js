@@ -9,6 +9,7 @@ export default function Navbar() {
   const navItems = [
     { path: '/', label: 'Home', icon: '▬' },
     { path: '/jets', label: 'Browse Jets', icon: '◐' },
+    { path: '/production', label: 'Production Range', icon: '⚙' },
     { path: '/search', label: 'Search Flights', icon: '◇' },
     { path: '/deals', label: 'Deals', icon: '◆' },
     { path: '/compare', label: 'Compare', icon: '≏' },

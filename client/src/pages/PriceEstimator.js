@@ -16,8 +16,8 @@ export default function PriceEstimator() {
     if (!form.distance) return;
     
     const [priceRes, carbonRes] = await Promise.all([
-      axios.get(`https://electricjets.onrender.com/api/price?distance=${form.distance}&jetType=${form.jetType}`),
-      axios.get(`https://electricjets.onrender.com/api/carbon?distance=${form.distance}`)
+      axios.get(`http://localhost:5000/api/price?distance=${form.distance}&jetType=${form.jetType}`),
+      axios.get(`http://localhost:5000/api/carbon?distance=${form.distance}`)
     ]);
     
     setPricing(priceRes.data);

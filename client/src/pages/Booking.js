@@ -21,7 +21,7 @@ export default function Booking() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    axios.get('https://electricjets.onrender.com/api/jets').then(res => setJets(res.data));
+    axios.get('http://localhost:5000/api/jets').then(res => setJets(res.data));
   }, []);
 
   function handleChange(e) {
@@ -33,7 +33,7 @@ export default function Booking() {
     setLoading(true);
     setError('');
     try {
-      await axios.post('https://electricjets.onrender.com/api/bookings', form);
+      await axios.post('http://localhost:5000/api/bookings', form);
       setSubmitted(true);
     } catch (err) {
       setError('Booking failed. Please try again.');

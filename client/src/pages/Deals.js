@@ -33,11 +33,11 @@ export default function Deals() {
   };
 
   useEffect(() => {
-    axios.get('https://electricjets.onrender.com/api/deals').then(res => {
+    axios.get('http://localhost:5000/api/deals').then(res => {
       setDeals(res.data);
       setFilteredDeals(res.data);
     });
-    axios.get('https://electricjets.onrender.com/api/jets').then(res => setJets(res.data));
+    axios.get('http://localhost:5000/api/jets').then(res => setJets(res.data));
   }, []);
 
   useEffect(() => {

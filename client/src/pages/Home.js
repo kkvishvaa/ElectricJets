@@ -4,7 +4,7 @@ import axios from 'axios';
 import FlightSearchBox from '../components/FlightSearchBox';
 
 export default function Home() {
-  const [memberType, setMemberType] = useState('Jet Card');
+  const [memberType, setMemberType] = useState('Light Jets');
   const [featuredJets, setFeaturedJets] = useState([]);
 
   // Jet images array
@@ -26,7 +26,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    axios.get('https://electricjets.onrender.com/api/jets').then(res => setFeaturedJets(res.data.slice(0, 2)));
+    axios.get('http://localhost:5000/api/jets').then(res => setFeaturedJets(res.data.slice(0, 2)));
   }, []);
 
   return (
@@ -47,40 +47,40 @@ export default function Home() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-light mb-8 leading-tight animate-slide-up">
-              Executive Jet
+              Private Jet
               <span className="block bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent font-normal">
-                Charter Services
+                Production Range
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl mb-12 text-slate-300 font-light leading-relaxed max-w-4xl mx-auto animate-slide-up delay-300">
-              Experience uncompromising luxury and efficiency with our curated fleet of premium aircraft. 
-              <span className="text-blue-400 font-medium"> Tailored for discerning executives</span> who value time, comfort, and discretion.
+              Experience our comprehensive production range from light jets to ultra-long-range aircraft. 
+              <span className="text-blue-400 font-medium"> Manufactured with precision, delivered with excellence</span> for discerning clients worldwide.
             </p>
             
             <div className="flex flex-col lg:flex-row gap-6 justify-center items-center animate-slide-up delay-500 mb-16">
               <Link 
-                to="/jets" 
+                to="/production" 
                 className="group relative overflow-hidden px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-600/25 min-w-52 text-center"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-                <span className="relative z-10">View Fleet</span>
+                <span className="relative z-10">Production Range</span>
+              </Link>
+              
+              <Link 
+                to="/jets" 
+                className="group relative overflow-hidden px-10 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl min-w-52 text-center border border-white/30 hover:border-white/50"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
+                <span className="relative z-10">Browse Fleet</span>
               </Link>
               
               <Link 
                 to="/deals" 
-                className="group relative overflow-hidden px-10 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl min-w-52 text-center border border-white/30 hover:border-white/50"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-                <span className="relative z-10">Special Offers</span>
-              </Link>
-              
-              <Link 
-                to="/pricing" 
                 className="group relative overflow-hidden px-10 py-4 bg-gradient-to-r from-slate-600 to-slate-700 text-white rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-slate-600/25 min-w-52 text-center"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-                <span className="relative z-10">Request Quote</span>
+                <span className="relative z-10">Special Offers</span>
               </Link>
             </div>
           </div>
@@ -92,20 +92,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Professional Membership Section */}
+      {/* Professional Manufacturing Excellence Section */}
       <section className="relative py-24 bg-white">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-50/50 to-blue-50/50"></div>
         
         <div className="container max-w-7xl mx-auto px-8 relative z-10">
           <div className="text-center mb-16">
             <span className="inline-block px-6 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold tracking-wider uppercase mb-6">
-              Membership Programs
+              Manufacturing Excellence
             </span>
             <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
-              Tailored Aviation Solutions
+              Production Capabilities
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Choose the membership tier that aligns with your travel requirements and business objectives
+              From concept to delivery, our comprehensive production range covers every category of private aviation
             </p>
           </div>
           
@@ -114,7 +114,7 @@ export default function Home() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-slate-600"></div>
               
               <div className="flex flex-col lg:flex-row gap-6 justify-center mb-10">
-                {['Jet Card', 'On-Demand Charter'].map((type, index) => (
+                {['Light Jets', 'Ultra Long Range'].map((type, index) => (
                   <button
                     key={type}
                     onClick={() => setMemberType(type)}
@@ -126,7 +126,7 @@ export default function Home() {
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
                     <div className="relative z-10 flex items-center justify-center gap-3">
-                      <span className="text-xl">{index === 0 ? '💳' : '✈️'}</span>
+                      <span className="text-xl">{index === 0 ? '✈️' : '🛩️'}</span>
                       <span>{type}</span>
                     </div>
                   </button>
@@ -135,17 +135,17 @@ export default function Home() {
               
               <div className="text-center p-8 bg-gradient-to-br from-slate-50 to-blue-50 rounded-xl border border-slate-100">
                 <div className="text-slate-700 text-lg leading-relaxed">
-                  {memberType === 'Jet Card' 
+                  {memberType === 'Light Jets' 
                     ? (
                       <div>
-                        <div className="text-3xl mb-4">💎</div>
-                        <p><strong className="text-blue-600">Prepaid flight hours</strong> with guaranteed aircraft availability and fixed hourly rates. Includes priority scheduling, dedicated account management, and complimentary concierge services for seamless travel coordination.</p>
+                        <div className="text-3xl mb-4">🏭</div>
+                        <p><strong className="text-blue-600">Entry-level production line</strong> featuring efficient light jets with capacity for 6-9 passengers. Built for short to medium-range missions with advanced avionics and fuel efficiency. Perfect for business travel and regional connectivity.</p>
                       </div>
                     )
                     : (
                       <div>
-                        <div className="text-3xl mb-4">🎯</div>
-                        <p><strong className="text-blue-600">Pay-per-flight basis</strong> with flexible aircraft selection and scheduling. Ideal for occasional travelers requiring luxury transportation without long-term commitments or membership obligations.</p>
+                        <div className="text-3xl mb-4">🚀</div>
+                        <p><strong className="text-blue-600">Flagship production series</strong> representing the pinnacle of aviation engineering. Ultra-long-range aircraft with intercontinental capability, luxury amenities, and cutting-edge technology for global business leaders.</p>
                       </div>
                     )
                   }

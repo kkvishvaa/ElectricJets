@@ -12,6 +12,7 @@ import FlightSearch from './pages/FlightSearch';
 import Weather from './pages/Weather';
 import PriceEstimator from './pages/PriceEstimator';
 import Payment from './pages/Payment';
+import ProductionRange from './pages/ProductionRange';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/jets" element={<Jets />} />
+            <Route path="/production" element={<ProductionRange />} />
             <Route path="/compare" element={<Compare />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/deals" element={<Deals />} />

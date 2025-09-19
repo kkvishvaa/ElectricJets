@@ -28,7 +28,7 @@ export default function Compare() {
   };
 
   useEffect(() => {
-    axios.get('https://electricjets.onrender.com/api/jets').then(res => setJets(res.data));
+    axios.get('http://localhost:5000/api/jets').then(res => setJets(res.data));
   }, []);
 
   const selectedJetA = Array.isArray(jets) ? jets.find(j => j.id === jetA) : undefined;
